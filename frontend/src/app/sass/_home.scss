@@ -1,0 +1,391 @@
+.update-container {
+  display: flex;
+  margin: 20px 0;
+
+  .update {
+    width: 350px;
+    height: 100px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    @include transition-ease();
+
+    &-admin {
+      background-color: rgb(255, 239, 226);
+      &:hover {
+        background-color: rgb(241, 206, 177);
+      }
+    }
+
+    &-student {
+      background-color: rgb(230, 245, 249);
+      margin: 0 4rem;
+      &:hover {
+        background-color: rgb(171, 232, 248);
+      }
+    }
+
+    &-driver {
+      background-color: rgb(200, 248, 208);
+      &:hover {
+        background-color: rgb(149, 255, 166);
+      }
+    }
+
+    &-bus {
+      margin: 0 4rem;
+      background-color: rgb(235, 255, 188);
+      &:hover {
+        background-color: rgb(219, 255, 133);
+      }
+    }
+
+    &-fee {
+      margin: 0 4rem;
+      background-color: rgb(255, 188, 188);
+      &:hover {
+        background-color: rgb(252, 172, 172);
+      }
+    }
+
+    p {
+      color: $dark;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+  }
+}
+
+// Parent Side
+
+.slider-container {
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  width: "100%";
+  height: 500px;
+  overflow: hidden;
+
+  .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.7s linear;
+
+    .slider-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .slider-text {
+      //background-color: $dark-blue;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      //opacity: 0.8;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1111;
+      width: 50%;
+      height: 100%;
+      text-align: left;
+
+      @include respond(tab-port) {
+        width: 100%;
+      }
+    }
+
+    .left-details {
+      width: 500px;
+      h1 {
+        color: $white;
+        font-size: 65px;
+        font-weight: bold;
+        text-shadow: 1px 1px 2px black;
+
+        @include respond(tab-land) {
+          font-size: 40px;
+          text-align: center;
+        }
+
+        @include respond(phone) {
+          font-size: 40px;
+          text-align: center;
+        }
+      }
+      p {
+        color: $white;
+        font-size: 25px;
+        letter-spacing: 2px;
+        @include respond(phone) {
+          font-size: 20px;
+          text-align: center;
+        }
+        @include respond(tab-land) {
+          font-size: 20px;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .slider.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .slider.lastSlide {
+    transform: translateX(-100%);
+  }
+  .slider.nextSlide {
+    transform: translateX(100%);
+  }
+}
+
+.card-section {
+  font-family: "Poppins", sans-serif;
+
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  width: 100%;
+  height: 500px;
+
+  @include respond(phone-xs) {
+    height: 1300px;
+  }
+  @include respond(phone) {
+    height: 1300px;
+  }
+  @include respond(tab-port-sm) {
+    height: 1300px;
+  }
+
+  @include respond(tab-port-land) {
+    height: 700px;
+  }
+  @include respond(big-desktop) {
+    height: 700px;
+  }
+
+  .card {
+    position: relative;
+    top: 20px;
+    width: 98%;
+    height: 95%;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+
+    .card-header-text {
+      font-size: 20px;
+
+      @include respond(big-desktop) {
+        font-size: 40px;
+      }
+      @include respond(tab-port-sm) {
+        justify-content: flex-start !important;
+        margin-left: 100px;
+      }
+      @include respond(tab-port-land) {
+        justify-content: center !important;
+        margin-left: 150px;
+      }
+
+      .icon {
+        font-size: 30px;
+      }
+
+      .card-headings {
+        color: $black;
+        font-style: normal;
+        font-weight: 700;
+      }
+    }
+
+    .card-left-image {
+      object-fit: cover;
+    }
+
+    .card-right-image {
+      filter: grayscale(100%);
+      filter: brightness(60%);
+      filter: opacity(40%);
+    }
+
+    .card-image-detail {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      //opacity: 0.8;
+      padding: 20px !important;
+      //background-color: $dark-blue;
+
+      .card-image-heading {
+        color: #0077b8;
+        font-weight: 700;
+        font-size: 40px !important;
+
+        @include respond(tab-port) {
+          font-size: 20px !important;
+        }
+        @include respond(tab-land) {
+          font-size: 20px !important;
+        }
+      }
+
+      .card-image-tagline {
+        color: $dark-blue;
+        font-size: 40px;
+        font-weight: 600;
+
+        @include respond(tab-port) {
+          font-size: 25px;
+        }
+      }
+
+      .card-image-description {
+        padding-top: 40px;
+        color: gray;
+        font-size: 20px;
+
+        @include respond(phone) {
+          font-size: 20px;
+        }
+
+        @include respond(tab-port-sm) {
+          font-size: 20px;
+        }
+
+        @include respond(tab-port) {
+          font-size: 15px;
+          padding-top: 10px !important;
+        }
+        @include respond(tab-land) {
+          font-size: 20px;
+          padding-top: 10px !important;
+        }
+      }
+    }
+  }
+}
+
+.features-container {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .features {
+    margin-top: 20px;
+    width: 100%;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    justify-items: center;
+    gap: 20px;
+
+    @include respond(tab-port) {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    @include respond(phone) {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    .feature-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 200px;
+      height: 200px;
+      @include transition-ease;
+      cursor: pointer;
+      img {
+        width: 60px;
+        height: 60px;
+      }
+
+      span {
+        font-size: 20px;
+        text-align: center;
+      }
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+.users {
+  width: 100%;
+  margin: 20px 0px;
+  // box-shadow: 0px 0px 5px 0px rgb(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0;
+
+  .users-container {
+    margin-top: 20px;
+    width: 100%;
+    padding: 40px 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    justify-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    @include respond(tab-land) {
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+
+    @include respond(tab-port) {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    @include respond(tab-port-sm) {
+      gap: 60px;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    @include respond(phone) {
+      gap: 60px;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    }
+
+    .user {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 200px;
+      height: 200px;
+      box-shadow: 0px 0px 10px 0px rgb(0, 0, 0, 0.1);
+      border-radius: 20px;
+      @include transition-ease;
+      cursor: pointer;
+      img {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+      }
+      span {
+        font-size: 25px;
+      }
+
+      &:hover {
+        transform: scale(1.07);
+      }
+    }
+  }
+}

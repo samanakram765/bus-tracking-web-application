@@ -1,0 +1,188 @@
+.login-register-container {
+  .logo {
+    width: 100px;
+    height: 120px;
+    margin: 20px 0;
+  }
+
+  .sign-in-text {
+    font-weight: 700;
+  }
+
+  .input {
+    margin: 10px 0;
+  }
+
+  .button {
+    width: 22rem;
+    margin: 10px 0;
+  }
+
+  .forgot-password {
+    margin-top: 10px;
+    cursor: pointer;
+
+    &:hover {
+      color: #979797;
+    }
+  }
+}
+
+// Parent Side
+
+// Register Styling
+.register-page {
+  background-color: $medium-white;
+  padding: 10px;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+
+  .register-container {
+    height: 95vh;
+    margin: 0 auto;
+    border-radius: 10px;
+    max-width: 1000px;
+    background-color: $white;
+
+    @include respond(tab-port-sm) {
+      height: 150vh;
+    }
+    @include respond(phone) {
+      height: 150vh;
+    }
+
+    .left-container {
+      overflow: hidden;
+      height: 100%;
+
+      @include respond(tab-port-sm) {
+        height: 30%;
+      }
+      .left-container-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .right-container {
+      height: 100%;
+      overflow-y: scroll;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      .two-input-container {
+        display: flex;
+
+        @include respond(tab-port-sm) {
+          flex-direction: column;
+        }
+      }
+    }
+
+    .register-heading {
+      font-size: 40px;
+      font-weight: 600;
+      color: $dark-blue;
+    }
+    .register-tagline {
+      color: $dark-blue;
+      font-size: 20px;
+      font-weight: 500;
+      padding-top: 20px;
+    }
+
+    .form {
+      .input {
+        width: 250px;
+      }
+
+      .button {
+        font-size: 15px;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+// Login Styles
+
+.login-page {
+  background-color: $medium-white;
+  padding: 10px;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+
+  .login-container {
+    height: 95vh;
+    margin: 0 auto;
+    border-radius: 10px;
+    max-width: 1000px;
+    background-color: $white;
+
+    @include respond(tab-port-sm) {
+      height: 100vh;
+    }
+    @include respond(phone) {
+      height: 100vh;
+    }
+
+    .left-container {
+      overflow: hidden;
+      height: 100%;
+
+      @include respond(tab-port-sm) {
+        height: 50%;
+      }
+
+      .left-container-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .right-container {
+      height: 100%;
+      overflow-y: scroll;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      .two-input-container {
+        display: flex;
+
+        @include respond(tab-port-sm) {
+          flex-direction: column;
+        }
+      }
+    }
+
+    .login-heading {
+      font-size: 40px;
+      font-weight: 600;
+      color: $dark-blue;
+    }
+    .login-tagline {
+      color: $dark-blue;
+      font-size: 20px;
+      font-weight: 500;
+      padding-top: 20px;
+    }
+
+    .form {
+      .input {
+        width: 350px;
+        margin: 10px 0;
+      }
+
+      .button {
+        font-size: 15px;
+        margin-top: 20px;
+        padding: 10px;
+        width: 350px;
+      }
+    }
+  }
+}

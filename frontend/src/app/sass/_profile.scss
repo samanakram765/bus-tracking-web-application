@@ -1,0 +1,54 @@
+.profile-container {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px !important;
+  .image-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .profile-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 100px;
+    }
+
+    .update-text {
+      margin-left: 20px;
+      display: block;
+    }
+  }
+
+  .label {
+    font-size: 20px;
+  }
+
+  .items {
+    background-color: $white;
+    box-shadow: none;
+    height: none;
+    padding: 10px;
+    margin-top: 2rem;
+    overflow: hidden;
+
+    .items-details {
+      margin: 0;
+    }
+  }
+
+  .input-container {
+    margin: 10px 0;
+
+    .label {
+      font-size: 20px;
+    }
+
+    .input {
+      width: 500px;
+    }
+  }
+
+  .button {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+}

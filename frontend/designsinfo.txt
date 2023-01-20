@@ -1,0 +1,17 @@
+tommorow work:
+
+chats route,
+bus info and update,
+driver update
+testing google maps 
+
+
+admin attributes:
+
+first name
+last name
+age
+designation
+school/college/university
+address
+
