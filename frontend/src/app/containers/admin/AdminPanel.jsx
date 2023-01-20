@@ -42,7 +42,7 @@ const AdminPanel = () => {
             <Route path="/fee" element={<FeeManagement />} />
 
             <Route path="/pdf" element={<PDFFile />} />
-
+            
             <Route path="/notifications" element={<AdminNotifications />} />
             {/* <Route path="/location" element={<Location />} /> */}
           </Routes>

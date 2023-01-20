@@ -23,7 +23,7 @@ const AdminRoutes = () => {
         location.pathname === "/admin/location" ||
         location.pathname === "/admin/attendance"
           ? "container-fluid overflow-auto"
-          : ""
+          : "container"
       }
     >
       <AuthContext.Provider value={{ user, setUser }}>

@@ -3,30 +3,30 @@ import React from "react";
 const steps = [
   {
     id: 1,
-    description: "Institute Admin will Register their account.",
+    description: "Institute Admin will Login to their account.",
     image: require("../../assets/working-1.png"),
   },
   {
     id: 2,
-    description: "Setting up user profiles, vehicles,routes, students etc",
+    description: "Setting up user profiles,vehicles,routes,students etc.",
     image: require("../../assets/working-2.jpg"),
   },
   {
     id: 3,
     description:
-      "Sharing user credential and mobile app link to parents and driver",
+      "Sharing user credential and mobile app link to parents and drivers.",
     image: require("../../assets/working-3.png"),
   },
   {
     id: 4,
     description:
-      "Driver can see the list of students, and can do live chat with the admin.",
+      "Driver can see the list of students, and can perform many tasks.",
     image: require("../../assets/working-4.png"),
   },
   {
     id: 5,
     description:
-      "Mobile app will show the route, bus stops, students, etc in their mobile",
+      "Mobile app will show the routes, chats, and related information etc in their mobile",
     image: require("../../assets/working-5.png"),
   },
   {
@@ -37,7 +37,7 @@ const steps = [
   {
     id: 7,
     description:
-      "Parents will get notification about the real-time location of the vehicle in their mobile",
+      "Parents will get real-time notifications and track vehicle in their mobile",
     image: require("../../assets/working-7.gif"),
   },
 ];
@@ -52,11 +52,11 @@ const HowItWorks = () => {
             <span className="heading">How Bus Tracking System Works?</span>
             <p className="description">
               Bus Tracking System is a solution to parents, Driver and Institute
-              authorities to create a safe and efficient school bus management.
+              authorities to create a safe and efficient institute bus management.
               We provide GPS tracking solutions to ensure student safety to and
-              from their schools. Trackschoolbus provides real-time location of
+              from their schools. This system provides real-time location of
               the Institute bus to parents and Institute authorities. Our
-              software helps the transport manager to maintain school bus fleet
+              software helps the transport manager to maintain institute bus fleet
               efficiently.
             </p>
           </div>

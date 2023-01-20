@@ -10,7 +10,7 @@ const BusDetails = () => {
     licenseNo,
     image,
     routes,
-    maintainance,
+    // maintainance,
     seatCapacity,
     seatCapacityFilled,
   } = location.state;
