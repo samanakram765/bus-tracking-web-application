@@ -88,6 +88,7 @@ const DriversList = () => {
                 driverDutyTime: driver.driverDutyTime,
                 driverDutyEnd: driver.driverDutyEnd,
                 nationalIdentityNumber: driver.nationalIdentityNumber,
+                driverEmail : driver.driverEmail
               }}
               title={driver.firstname}
               onDelete={handleDelete}
@@ -108,6 +109,7 @@ const DriversList = () => {
                     address: driver.address,
                     postalcode: driver.postalcode,
                     busNo: driver.busNo,
+                    driverEmail : driver.driverEmail,
                     driverDutyTime: driver.driverDutyTime,
                     driverDutyEnd: driver.driverDutyEnd,
                     licenseImage: driver.licenseImage,

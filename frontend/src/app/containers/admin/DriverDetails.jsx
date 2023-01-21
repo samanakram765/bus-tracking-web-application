@@ -18,6 +18,7 @@ const DriverDetails = () => {
     busNo,
     driverDutyTime,
     driverDutyEnd,
+    driverEmail,
     image,
     licenseImage,
     medicalReport,
@@ -57,6 +58,10 @@ const DriverDetails = () => {
         <div className="items-details">
           <div>
             <Detail label="Salary" detail={nationalIdentityNumber} />
+          </div>
+
+          <div className="right-item">
+            <Detail label="Email" detail={driverEmail} />
           </div>
         </div>
 

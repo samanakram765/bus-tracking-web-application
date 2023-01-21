@@ -79,6 +79,7 @@ const DriverInformationForm = () => {
     isUpdated,
     licenseImage,
     medicalReport,
+
     nationalIdentityNumber,
   } = location.state || {};
 
@@ -97,6 +98,7 @@ const DriverInformationForm = () => {
     setBusNoList(busDetails);
   };
 
+  console.log(address)
   const handleDriverInformation = async (values, { resetForm }) => {
     setIsProcessing(true);
     try {
@@ -123,7 +125,7 @@ const DriverInformationForm = () => {
         driverEmail:values.driverEmail
       };
 
-  
+
       const driverCollection = collection(database, "drivers");
 
       const q = query(
@@ -158,7 +160,7 @@ const DriverInformationForm = () => {
           match.params.id,
           values.drivingLicense,
           values.medicalReport,
-       
+
         );
       } else {
         result = await addData(
@@ -167,7 +169,7 @@ const DriverInformationForm = () => {
           values.image,
           values.medicalReport,
           values.drivingLicense,
-         
+
         );
       }
 
@@ -176,32 +178,32 @@ const DriverInformationForm = () => {
         return toast.error("Image should be in png, jpg or jpeg format", { autoClose: 1000 });
       }
 
-       if (result) {
-        //send email to parent
+      //  if (result) {
+      //   //send email to parent
 
-        const emailRes = await fetch("/send-email-to-parent", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-           to : data.driverEmail,
-           patchMethod :isUpdated,
-           data:{
-            name:data.fullName+" "+data.lastname,
-            cnic: data.nationalIdentityNumber,
-            password:data.password,
-           }
-          }),
-        });
+      //   const emailRes = await fetch("/send-email-to-parent", {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify({
+      //      to : data.driverEmail,
+      //      patchMethod :isUpdated,
+      //      data:{
+      //       name:data.fullName+" "+data.lastname,
+      //       cnic: data.nationalIdentityNumber,
+      //       password:data.password,
+      //      }
+      //     }),
+      //   });
 
-        const emailData = await emailRes.json();
+      //   const emailData = await emailRes.json();
 
 
-        if (emailData.status === 401 || !emailData) {
-          return toast.warning("Something went wrong while sending email to parent");
-        }
-      }
+      //   if (emailData.status === 401 || !emailData) {
+      //     return toast.warning("Something went wrong while sending email to parent");
+      //   }
+      // }
       setIsProcessing(false);
       resetForm();
       toast.success("Data Saved Successfully.", { autoClose: 1000 });
