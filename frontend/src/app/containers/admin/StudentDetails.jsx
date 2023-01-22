@@ -27,7 +27,8 @@ const StudentDetails = () => {
     class: majorOrClass,
     image,
     fatherNID,
-    nationalIdentityNumber,
+    gaurdianEmail,
+    // nationalIdentityNumber,
   } = location.state || {};
 
   const getParentDetails = async () => {
@@ -87,6 +88,7 @@ const StudentDetails = () => {
             <Detail label="Father/Guardian no" detail={parentcontact} />
           </div>
         </div>
+       
 
         <div className="items-details">
           <div>
@@ -104,8 +106,13 @@ const StudentDetails = () => {
               detail={parentDetail?.nationalIdentityNumber}
             />
           </div>
+          <div className="right-item">
+          <div>
+            <Detail label="Guardian Email" detail={parentDetail?.gaurdianEmail}/>
+          </div>
         </div>
-
+        </div>
+        
         <h4>Physical Address</h4>
         <div className="line"></div>
         <div className="items-details">
