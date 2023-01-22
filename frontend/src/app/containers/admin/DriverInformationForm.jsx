@@ -190,7 +190,7 @@ const DriverInformationForm = () => {
            to : data.driverEmail,
            patchMethod :isUpdated,
            data:{
-            name:data.fullName+" "+data.lastname,
+            name:data.firstname +" "+data.lastname,
             cnic: data.nationalIdentityNumber,
             password:data.password,
            }

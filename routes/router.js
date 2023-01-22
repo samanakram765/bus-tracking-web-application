@@ -22,7 +22,7 @@ router.post("/send-email-to-parent", (req, res) => {
     <h4> Please login with given below credentials </h4>
     <p>CINC : ${data.data?.cnic}</p>
     <p>Password : ${data.data?.password}</p>
-    <p>Institue : ${data.data?.institute}</p>
+
     `;
     const mailOptions = {
       from: process.env.EMAIL,

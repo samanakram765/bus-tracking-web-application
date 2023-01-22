@@ -142,7 +142,7 @@ const StudentInformationForm = () => {
       const busRef = doc(database, "bus", filteredBusNo[0].id);
       const bus = await getDoc(busRef);
       const busData = { id: bus.id, ...bus.data() };
-      console.log("Bus Data ", busData);
+
 
       console.log("Filtered bus no : ", filteredBusNo, seatCapacity);
       if(!isUpdated){
