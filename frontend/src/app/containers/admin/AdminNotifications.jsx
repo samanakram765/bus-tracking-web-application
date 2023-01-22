@@ -86,7 +86,7 @@ function AdminNotifications() {
                   </div>
                 </div>
                 <div className="d-flex flex-column align-items-end">
-                  <span>BY Bus No {alert.busNo}</span>
+                  <span>By Bus No {alert.busNo}</span>
                   <span>{format(alert.created_at.toDate())}</span>
                 </div>
               </div>

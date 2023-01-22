@@ -166,6 +166,7 @@ const StudentsList = () => {
                 class: student.class,
                 fatherNID: student.fatherNID,
                 collectFee: student.collectFee,
+                gaurdianEmail: student.gaurdianEmail,
               }}
               title={`${student.firstname} ${student.lastname}`}
               onDelete={() => handleDelete(student)}
@@ -206,6 +207,7 @@ const StudentsList = () => {
                     isUpdated: true,
                     fatherNID: student.fatherNID,
                     collectFee: student.collectFee,
+                    gaurdianEmail: student.gaurdianEmail,
                   },
                 })
               }
