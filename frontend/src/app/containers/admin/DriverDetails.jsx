@@ -57,7 +57,7 @@ const DriverDetails = () => {
         </div>
         <div className="items-details">
           <div>
-            <Detail label="Salary" detail={nationalIdentityNumber} />
+            <Detail label="National Identity Number" detail={nationalIdentityNumber} />
           </div>
 
           <div className="right-item">
