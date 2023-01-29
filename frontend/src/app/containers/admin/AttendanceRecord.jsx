@@ -11,6 +11,7 @@ import {
 } from "firebase/firestore";
 import _ from "lodash";
 import { orderBy } from "lodash";
+import printJS from "print-js";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -34,8 +35,8 @@ export default function AttendanceRecord() {
   const tableHeader = [
     { id: 1, label: "#" },
     { id: 2, label: "Reg no", key: "rollNo" },
-    { id: 3, label: "Student name", key: "firstname" },
-    { id: 4, label: "Driver Name", key: "driverName" },
+    { id: 3, label: "Student", key: "firstname" },
+    { id: 4, label: "Driver", key: "driverName" },
     { id: 5, label: "Bus No", key: "busNo" },
     { id: 6, label: "Time", key: "timeOnAndOffBoard" },
     { id: 7, label: "Status", key: "onAndOffBoard" },
@@ -43,18 +44,18 @@ export default function AttendanceRecord() {
   const tableHeader1 = [
     { id: 1, label: "#" },
     { id: 2, label: "Reg no", key: "rollNo" },
-    { id: 3, label: "Student name", key: "firstname" },
-    { id: 4, label: "Driver Name", key: "driverName" },
+    { id: 3, label: "Student", key: "firstname" },
+    { id: 4, label: "Driver", key: "driverName" },
     { id: 5, label: "Bus No", key: "busNo" },
     { id: 6, label: "Date", key: "date" },
     {
       id: 7,
-      label: "School Opening(on/off) Board",
+      label: "School Opening",
       key: "openingTime.onBoard",
     },
     {
       id: 7,
-      label: "School Closing(on/off) Board",
+      label: "School Closing",
       key: "closingTime.offBoard",
     },
   ];
@@ -114,6 +115,10 @@ export default function AttendanceRecord() {
     }
   };
 
+  const printFile = () => {
+    printJS({ printable: "print-file", type: "html" });
+  };
+
   const searchStudent = (search) => {
     if (search) {
       setFilteredStudent(students);
@@ -138,7 +143,7 @@ export default function AttendanceRecord() {
     setDateFilter(false);
     if (!e.target.value) return setFilteredStudent(students);
     const month = new Date(e.target.value).getMonth();
-    console.log("Month of attendance : ", month)
+    console.log("Month of attendance : ", month);
     const year = new Date(e.target.value).getFullYear();
     const attendanceCollection = collection(database, "attendance");
     const q = query(
@@ -206,9 +211,18 @@ export default function AttendanceRecord() {
           className="mt-2 w-25"
           onChange={(e) => getDataFromMonth(e)}
         ></input>
+
+        <button
+          type="button"
+          className="btn btn-md btn-primary button"
+          onClick={printFile}
+        >
+          Print Records
+        </button>
       </div>
+
       <div className="items">
-        <table class="table">
+        <table class="table" id="print-file">
           <TableHeader
             data={!dateFilter ? tableHeader : tableHeader1}
             onSort={handleSort}
